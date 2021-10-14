@@ -35,9 +35,12 @@ outputs:
   release_notes:
     description: 'Semantic release notes'
 runs:
-  using: 'node12'
-  # pre: 'fetch_artifact.js'
-  main: 'dist/index.js'
+  using: "composite"
+  steps:
+    - run: npm run build
+      shell: bash
+    - run: node dist/index.js
+      shell: bash
 branding:
   icon: 'file-text'
   color: 'orange'
