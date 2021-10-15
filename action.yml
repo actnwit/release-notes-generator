@@ -37,8 +37,8 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    # - run: npm run build
-    #   shell: bash
+    - run: npm install
+      shell: bash
     - run: node lib/index.js
       shell: bash
 branding:
